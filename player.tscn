@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://behab84b6f8sy"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_xcv2q"]
+[ext_resource type="Texture2D" uid="uid://q8vbckaxfgyj" path="res://art/flappy_3.png" id="2_614wa"]
+[ext_resource type="Texture2D" uid="uid://biqu7xk15wvy7" path="res://art/flappy_1.png" id="2_w84ba"]
+[ext_resource type="Texture2D" uid="uid://cdkcuiroin5jx" path="res://art/flappy_2.png" id="3_qk7lb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6t51"]
+size = Vector2(126, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fjkjw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_614wa")
+}],
+"loop": true,
+"name": &"falling",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_w84ba")
+}],
+"loop": true,
+"name": &"flat",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qk7lb")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 5.0
+}]
+
+[node name="Player" type="Area2D"]
+position = Vector2(200, 200)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_xcv2q")
+horizontal_speed = 50
+horizontal_friction = 10
+jump_acceleration = 50
+acceleration_duetogravity = 10
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -2)
+shape = SubResource("RectangleShape2D_x6t51")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fjkjw")
+animation = &"falling"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

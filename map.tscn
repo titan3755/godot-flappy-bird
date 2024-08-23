@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://kllx6i0yreuy"]
+
+[ext_resource type="Texture2D" uid="uid://cf3vqcvrfv78u" path="res://art/background_1.png" id="1_qqjum"]
+
+[node name="Map" type="Area2D"]
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 55.0
+offset_bottom = 40.0
+scale = Vector2(20, 20)
+texture = ExtResource("1_qqjum")
+expand_mode = 3
+flip_h = true

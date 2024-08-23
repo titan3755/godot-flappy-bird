@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctms2rjavkch8"]
+
+[ext_resource type="PackedScene" uid="uid://kllx6i0yreuy" path="res://map.tscn" id="1_3cnbv"]
+[ext_resource type="Script" path="res://main.gd" id="1_4dyhc"]
+[ext_resource type="PackedScene" uid="uid://f0yskf6pemfr" path="res://obstacle.tscn" id="2_4xriw"]
+[ext_resource type="PackedScene" uid="uid://behab84b6f8sy" path="res://player.tscn" id="2_6d3xu"]
+[ext_resource type="PackedScene" uid="uid://c22yy5rk4h3hf" path="res://hud.tscn" id="3_4grrb"]
+[ext_resource type="Script" path="res://WallSpawnTimer.gd" id="4_65kka"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_4dyhc")
+obstacle_scene = ExtResource("2_4xriw")
+wall_gap = 175
+start_position_vertical = 420
+metadata/_edit_group_ = true
+
+[node name="HUD" parent="." instance=ExtResource("3_4grrb")]
+
+[node name="Map" parent="." instance=ExtResource("1_3cnbv")]
+
+[node name="Player" parent="." instance=ExtResource("2_6d3xu")]
+horizontal_speed = 30
+horizontal_friction = 20
+jump_acceleration = 650
+acceleration_duetogravity = 18
+
+[node name="WallSpawnTimer" type="Timer" parent="."]
+script = ExtResource("4_65kka")
+
+[connection signal="timeout" from="WallSpawnTimer" to="." method="_on_wall_spawn_timer_timeout"]

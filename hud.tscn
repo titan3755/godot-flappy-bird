@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://c22yy5rk4h3hf"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_3u6i7"]
+[ext_resource type="FontFile" uid="uid://cu0pbyrmpagp2" path="res://fonts/Gameplay.ttf" id="1_4hiab"]
+[ext_resource type="FontFile" uid="uid://ttern8vkkeim" path="res://fonts/Hey Comic.ttf" id="3_04pcl"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_3u6i7")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_right = 182.0
+offset_bottom = 44.0
+theme_override_fonts/font = ExtResource("1_4hiab")
+theme_override_font_sizes/font_size = 36
+text = "Score: 0"
+metadata/_edit_group_ = true
+
+[node name="GameStartLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.898039, 0.811765, 1)
+theme_override_colors/font_shadow_color = Color(4.33177e-06, 0.591962, 0.764524, 1)
+theme_override_colors/font_outline_color = Color(0.33559, 0.594333, 1, 1)
+theme_override_fonts/font = ExtResource("3_04pcl")
+theme_override_font_sizes/font_size = 72
+text = "Press \"Enter\" key to play!"
