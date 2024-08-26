@@ -12,6 +12,10 @@ func _process(delta):
 
 func update_score(score):
 	$ScoreLabel.text = str(score)
+	
+func show_score_upon_gameover(score):
+	var formt = "Game Over!\nScore: {str}  \n Press \"Enter\" to restart or \"Esc\" to quit"
+	$GameOverLabel.text = formt.format({"str": str(score)})
 
 func hide_show(hide_no, value):
 	if hide_no == 0:
@@ -24,4 +28,9 @@ func hide_show(hide_no, value):
 			$GameStartLabel.hide()
 		else:
 			$GameStartLabel.show()
+	elif hide_no == 2:
+		if value == true:
+			$GameOverLabel.hide()
+		else:
+			$GameOverLabel.show()
 	

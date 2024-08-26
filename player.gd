@@ -42,10 +42,12 @@ func _process(delta):
 
 
 func _on_body_entered(_body):
-	game_over()
 	hide()
 	hit.emit()
 	$CollisionShape2D.set_deferred("disabled", true)
 
-func game_over():
-	pass #todo
+func game_start():
+	position = Vector2(440, 320)
+	show()
+	$CollisionShape2D.disabled = false
+	
