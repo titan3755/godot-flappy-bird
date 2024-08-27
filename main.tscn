@@ -21,8 +21,7 @@ metadata/_edit_group_ = true
 [node name="Player" parent="." instance=ExtResource("2_6d3xu")]
 horizontal_speed = 30
 horizontal_friction = 20
-jump_acceleration = 1200
-acceleration_duetogravity = 20
+jump_acceleration = 800
 
 [node name="WallSpawnTimer" type="Timer" parent="."]
 script = ExtResource("4_65kka")
