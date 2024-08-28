@@ -13,5 +13,4 @@ The download links are listed below. Note that only the **Windows** version of t
 This game does not have sophisticated controls. A player can **jump** with **Spacebar**, **move left** and **move right** with **A** and **D** keys respectively and **restart** the game with **Enter** key when game over. The game can be exited with **Esc** key when game over or anytime by closing the window.
 
 ## To-Do
-**BugFix**: Game sometimes crashes when hitting obstacles. \
 **Feature**: Add textures to obstacle pillars
