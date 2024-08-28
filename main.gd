@@ -75,6 +75,7 @@ func _on_player_hit():
 	$HUD.hide_show(0, true)
 	for instance in instances:
 		remove_child(instance)
+	instances = []
 	game_state = false
 	game_over = true
 	score = 0
