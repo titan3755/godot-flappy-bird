@@ -26,6 +26,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if Input.is_action_just_pressed("start_game") && game_state == false && game_over == false:
+		game_state = true
 		new_game(game_state, game_over)
 	if Input.is_action_just_pressed("start_game") && game_state == false && game_over == true:
 		game_over = false
